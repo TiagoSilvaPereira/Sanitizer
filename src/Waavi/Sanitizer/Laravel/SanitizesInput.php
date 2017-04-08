@@ -1,7 +1,5 @@
 <?php
-
 namespace Waavi\Sanitizer\Laravel;
-
 trait SanitizesInput
 {
     /**
@@ -14,7 +12,6 @@ trait SanitizesInput
         $this->sanitize();
         parent::validate();
     }
-
     /**
      *  Sanitize this request's input
      *
@@ -26,7 +23,6 @@ trait SanitizesInput
         $this->sanitizer = \Sanitizer::make($this->input(), $this->filters());
         $this->replace($this->sanitizer->sanitize());
     }
-
     /**
      *  Add custom fields to the Sanitizer
      *
@@ -38,7 +34,6 @@ trait SanitizesInput
             \Sanitizer::extend($name, $filter);
         }
     }
-
     /**
      *  Filters to be applied to the input.
      *
@@ -48,7 +43,6 @@ trait SanitizesInput
     {
         return [];
     }
-
     /**
      *  Custom Filters to be applied to the input.
      *
